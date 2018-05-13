@@ -1,0 +1,2 @@
+module ChessboardsHelper
+end

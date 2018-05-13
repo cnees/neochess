@@ -1,0 +1,11 @@
+<a href="/reset/~0F0" style="font-size: 10px; font-family: Helvetica; text-align: center; display: block;">Reset</a>
+<div id="board" style="position:absolute;z-index:0;background:url(http://ches.herokuapp.com/bg.gif)"><img src="<%= Rails.env.production? ? 'http://ches.herokuapp.com/checkerboard.png' : 'http://www.devdemia.com:3000/b3/~0F0' %>"></div>
+<div id="overlay" style="position:absolute;z-index:10"><div id="t"><% (1..8).reverse_each do |rank| %><% ('a'..'h').each do |file| %><a href="/<%= "#{file}#{rank}/~0F0"%>"></a><% end %><% end %></div>
+<style>
+.sf{display:none}
+body {font-size:0px;font-family:Serif;width:300px;margin:0px;padding:0px}
+#board{top:25px;left:50%;margin-left:-148px;width:300px}
+#overlay {top:25px;left:0px;height:300px;width:300px;overflow: hidden;left:50%;margin-left:-148px}
+#overlay a {padding:0px;margin:0px;height:37.5px;width:37.5px;display:inline-block}
+#overlay a.h {height:35px;width:35px;border: 1px solid red}
+</style>

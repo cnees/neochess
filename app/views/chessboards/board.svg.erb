@@ -1,0 +1,19 @@
+<svg height="300" width="300" xmlns="http://www.w3.org/2000/svg">
+  <style>text {font-size:30.7px;line-height:37px;}</style>
+  <% if @square %>
+    <rect x="<%= (@square[0].ord - 'a'.ord) * 37.5%>" y="<%= (8 - @square[1].to_i) * 37.5%>" width="37.5" height="37.5" style="fill:#0C9;fill-opacity:0.5" />
+  <% end %>
+  <% (0..7).each do |rank| %>
+    <text fill="#000" y="<%=(7-rank)*37.5 + 27%>" textLength="300" lengthAdjust="spacing">
+    <% (0..7).each do |file| %>
+        <%= raw @letter_pieces[(@board[rank * 8 + file])] || "&#8195;" %>
+    <% end %>
+    </text>
+  <% end %>
+  <% if @message %>
+    <rect x="0" y="0" width="300" height="300" style="fill:#000;fill-opacity:0.7" />
+    <text fill="#fff" x="10" y="25" style="font-size:12px;color:#fff">
+      <%= @message %>
+    </text>
+  <% end %>
+</svg>
