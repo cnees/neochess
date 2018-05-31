@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+When you load a page, your browser makes a GET request to Neo, and Neo returns the code for that page. Your browser then renders the code and requests everything the code requires—all the external JS, CSS, and image files. It makes a GET request for each resource. You can watch and examine the requests in the Network tab of your browser's dev tools.
+If you look at an HTTP request on any page using the Network tab, you'll see it includes HTTP request headers. Those tell the server some info about the request, usually including the browser (user-agent) that made the request and the URL (referrer) the request came from. The server also knows the IP that made the request, since it needs to know where to send the response.
+I made my own server with Rails and used gems (libraries) for the chess game and chess AI. The request for the image goes to my server, and I build and return the image based on the IP, which I use to keep track of which game you're playing, and the referrer, which tells me which square you just clicked—each square links to a different URL.
